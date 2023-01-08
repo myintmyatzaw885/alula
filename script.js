@@ -94,7 +94,7 @@ $(document).ready(function() {
                 items: 1,
                 nav: true
             },
-            390: {
+            395: {
                 items: 2,
             },
             800: {

@@ -222,6 +222,7 @@ html {
     padding: .5rem;
     border-radius: .2rem;
     border: .1rem solid var(--second-white-color);
+    cursor: pointer;
 }
 
 #navbar .middle-nav .middle-nav-third-side .cart .fa-cart-shopping {
@@ -449,6 +450,12 @@ html {
     padding: 0 5rem;
     color: var(--black-color);
     position: relative;
+    transition: .2s ease;
+}
+
+#newArrival .newArrival-container .first-newArrival:hover,
+#newArrival .newArrival-container .second-newArrival:hover {
+    opacity: .7;
 }
 
 #newArrival .newArrival-container .first-newArrival {
@@ -622,6 +629,41 @@ html {
     line-height: 3.3rem;
     text-align: center;
     border-radius: 50%;
+}
+
+#deal .deal-container .deal-box-container .deal-box .deal-image .view-cart {
+    position: absolute;
+    bottom: 0;
+    left: -0;
+    width: 100%;
+    height: 25%;
+    background: var(--first-gray-color);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: .2s ease;
+}
+
+#deal .deal-container .deal-box-container .deal-box:hover .deal-image .view-cart {
+    display: flex;
+}
+
+#deal .deal-container .deal-box-container .deal-box .deal-image .view-cart .fa-solid {
+    margin: 0 .3rem;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    line-height: 4rem;
+    font-size: 1.5rem;
+    color: var(--first-white-color);
+    background: var(--green-color);
+    opacity: .6;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+#deal .deal-container .deal-box-container .deal-box .deal-image .view-cart .fa-solid:hover {
+    opacity: 1;
 }
 
 #deal .deal-container .deal-box-container .deal-box .deal-text {
@@ -1137,6 +1179,12 @@ html {
     width: 25rem;
     height: 38rem;
     color: var(--black-color);
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+#category .category-container .category-box:hover {
+    opacity: .7;
 }
 
 #category .category-container .bonsai {
@@ -1269,6 +1317,12 @@ html {
     display: flex;
     flex-flow: column;
     background: var(--second-white-color);
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+#blog .blog-container .blog-box:hover {
+    opacity: .7;
 }
 
 #blog .blog-container .blog-box .blog-image {
@@ -2007,6 +2061,17 @@ html {
         width: 4rem;
         height: 2rem;
         margin-right: .5rem;
+    }
+}
+
+@media(max-width:395px) {
+    #blog .owl-nav {
+        top: -23%;
+    }
+    #blog .blog-container .blog-box {
+        width: 95%;
+        height: 25rem;
+        margin: 1rem auto 0 auto;
     }
 }
 
