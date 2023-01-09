@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -45,6 +46,13 @@ html {
     display: flex;
     flex-flow: column;
     align-items: center;
+}
+
+#navbar.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
 }
 
 
@@ -240,6 +248,14 @@ html {
     text-align: center;
     line-height: 1.9rem;
     border-radius: 50%;
+}
+
+#navbar .middle-nav .fa-bars,
+#navbar .middle-nav .fa-times {
+    font-size: 1.7rem;
+    color: var(--first-white-color);
+    cursor: pointer;
+    display: none;
 }
 
 
@@ -1725,6 +1741,49 @@ html {
 /* footer section end  */
 
 
+/* go to top btn start  */
+
+.go-to-top {
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    transform: translate(-50%, -50%);
+    width: 4rem;
+    height: 4rem;
+    background: var(--green-color);
+    color: var(--first-white-color);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    animation: top-animation 4s ease infinite;
+    cursor: pointer;
+}
+
+.go-to-top:hover {
+    background: var(--gold-color);
+}
+
+.go-to-top .fa-solid {
+    font-size: 2rem;
+}
+
+@keyframes top-animation {
+    0% {
+        right: 2%;
+        bottom: 2%;
+    }
+    100% {
+        right: 2%;
+        bottom: 6%;
+    }
+}
+
+
+/* go to top btn end  */
+
+
 /* media query start  */
 
 @media(max-width:1250px) {
@@ -1830,9 +1889,6 @@ html {
 }
 
 @media(max-width:800px) {
-    #navbar {
-        display: none;
-    }
     #home .home-container {
         flex-flow: column-reverse;
         justify-content: flex-end;
@@ -1892,6 +1948,69 @@ html {
     }
 }
 
+@media(max-width:700px) {
+    #navbar {
+        height: 10vh;
+        box-shadow: .2rem .2rem 1rem var(--first-gray-color);
+    }
+    #navbar .upper-nav,
+    #navbar .middle-nav .middle-nav-third-side,
+    #navbar .lower-nav {
+        display: none;
+    }
+    #navbar .middle-nav {
+        height: 10vh;
+        width: 97%;
+    }
+    #navbar .middle-nav .fa-bars {
+        display: inline-block;
+    }
+    /* toggle start  */
+    #navbar.toggle {
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+    #navbar .upper-nav.toggle,
+    #navbar .middle-nav.toggle,
+    #navbar .lower-nav ul.toggle {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        padding: 1rem 0;
+    }
+    #navbar .middle-nav .middle-nav-third-side.toggle {
+        display: flex;
+    }
+    #navbar .upper-nav.toggle {
+        height: 10vh;
+    }
+    #navbar .middle-nav.toggle {
+        height: 20vh;
+    }
+    #navbar .middle-nav .fa-times.toggle {
+        display: inline-block;
+        position: absolute;
+        right: 1.3rem;
+        top: 1.3rem;
+    }
+    #navbar .middle-nav .fa-bars.toggle {
+        display: none;
+    }
+    #navbar .lower-nav.toggle {
+        display: flex;
+        height: 70vh;
+        align-items: flex-start;
+    }
+    #navbar .lower-nav ul li.toggle {
+        padding-bottom: 3rem;
+    }
+    /* toggle end  */
+}
+
 @media(max-width:624px) {
     #deal .deal-container .deal-box-container .deal-box {
         width: 20rem;
@@ -1930,6 +2049,21 @@ html {
 }
 
 @media(max-width:500px) {
+    /* toggle start  */
+    /* #navbar.toggle {
+        width: 29rem;
+    } */
+    /* toggle end  */
+    #navbar .middle-nav .middle-nav-second-side {
+        width: 23rem;
+    }
+    #navbar .middle-nav .middle-nav-second-side input[type="search"] {
+        width: 20rem;
+        font-size: 1.3rem;
+    }
+    #navbar .middle-nav .middle-nav-second-side .fa-magnifying-glass {
+        font-size: 1.3rem;
+    }
     #home .home-container .home-first-side .home-first-text {
         font-size: 1.3rem;
         padding-top: 1rem;
@@ -2065,6 +2199,12 @@ html {
 }
 
 @media(max-width:395px) {
+    #navbar .middle-nav .middle-nav-second-side {
+        width: 20rem;
+    }
+    #navbar .middle-nav .middle-nav-second-side input[type="search"] {
+        width: 17rem;
+    }
     #blog .owl-nav {
         top: -23%;
     }
