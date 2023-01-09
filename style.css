@@ -48,13 +48,6 @@ html {
     align-items: center;
 }
 
-#navbar.active {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 6;
-}
-
 
 /* upper nav start  */
 
@@ -361,7 +354,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5rem;
+    padding: 0 10rem 0 5rem;
     margin: 0 auto;
 }
 

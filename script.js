@@ -26,10 +26,9 @@ $(document).ready(function() {
         margin: 10,
         nav: true,
         items: 1,
-        // autoplay: true,
+        autoplay: true,
     });
     $('.deal-box-container').owlCarousel({
-        loop: true,
         margin: 10,
         nav: true,
         responsive: {
@@ -82,7 +81,6 @@ $(document).ready(function() {
         }
     });
     $('.category-container').owlCarousel({
-        loop: true,
         margin: 10,
         nav: true,
         responsive: {
@@ -108,7 +106,6 @@ $(document).ready(function() {
         }
     });
     $('.blog-container').owlCarousel({
-        loop: true,
         margin: 10,
         nav: true,
         responsive: {
@@ -155,10 +152,8 @@ $(document).ready(function() {
     $(window).scroll(function() {
         if ($(this).scrollTop() > 40) {
             $('.go-to-top').fadeIn();
-            $('#navbar').addClass('active');
         } else {
             $('.go-to-top').fadeOut();
-            $('#navbar').removeClass('active');
         };
     });
     $(".go-to-top").click(function() {
