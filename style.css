@@ -1900,6 +1900,7 @@ html {
         flex-flow: column-reverse;
         justify-content: flex-end;
         align-items: center;
+        padding: 0 2rem;
     }
     #home .home-container .home-first-side {
         text-align: center;
